@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test html</title>
+</head>
+
+<body>
+<p>Hello, users</p>
+<p>&nbsp;</p>
+
+<p id="test_header">This a test for using dreamweaver to write HTML</p>
+
+<table width="251" border="1">
+  <tr>
+    <th scope="col"><strong>a</strong></th>
+    <th width="62" scope="col"><strong>1</strong></th>
+    <th width="110" scope="col"><strong>2</strong></th>
+  </tr>
+  <tr>
+    <td><strong>b</strong></td>
+    <td><strong>2</strong></td>
+    <td><strong>3</strong></td>
+  </tr>
+  <tr>
+    <td><strong>c</strong></td>
+    <td><strong>3</strong></td>
+    <td><strong>4</strong></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<script>
+var i = 0;
+var global_ele = document.createElement("global");
+function myFunction() {
+	//document.writeln("this is a test page from johnson<br/> second row<br/>");
+	x=document.getElementById("test_header");
+	if (x.innerHTML == "This a test for using dreamweaver to write HTML")
+	{
+		x.innerHTML="Header changed!";
+	}
+	else {
+		x.innerHTML="This a test for using dreamweaver to write HTML";
+	}
+	var local_ele = document.createElement("local");
+	local_ele.innerHTML = "<br/>This is appended!";
+	document.body.appendChild(local_ele);
+	global_ele.innerHTML = ++i;
+	switch (i % 2 ){
+		case 0 : //document.body.appendChild(global_ele);
+		break
+		case 1 : document.body.appendChild(global_ele);
+		break
+		default: document.body.appendChild(global_ele);
+	}
+}
+</script>
+<script>
+document.writeln("<br/>this is also written in JS")
+</script>
+<button type="onclick" onclick="myFunction()">点击</button>
+<script type="text/javascript">
+// object
+var my = new Object();
+my.name ="johnson";
+my.url = "test.com"
+my.content = "for test only"
+
+// for loop
+for (prop in my)
+{
+	document.writeln("<br/>属性 " + prop +" 是 " + my[prop]);
+}
+</script>
+</body>
+</html>
